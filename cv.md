@@ -4,9 +4,13 @@
 
 📨 You can reach me:
 
-`<div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/></div>`
+<div>
+   <a href="">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/>
+   </a>
+</div>
 
-`<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/>`
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/>
 
 2. Contact Info (add several ways to contact you)
 3. Summary (your goal, wishes, reveal what is important for you, what do you want and why.

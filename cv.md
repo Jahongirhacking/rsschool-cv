@@ -1,25 +1,37 @@
-# Hello
+# About Me
 
-👋 Hi, my name is Jahongir Hayitov
+👋 Hi there, my name is Jahongir Hayitov
 
-📨 You can reach me:
+📨 You can reach me via following links:
 
-<div>
-   <a href="">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: auto; width: fit-content">
+   <a href="https://t.me/JahongirKhayitov">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png" width="30px" />
+   </a>
+   <a href="https://leetcode.com/Jahongirhacking/">
+      <img src="https://user-images.githubusercontent.com/63964149/152531278-5e01909d-0c2e-412a-8acc-4a06863c244d.png" width="30px" />
+   <a href="https://www.linkedin.com/in/jahongir-hayitov/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" width="30px" />
+   </a>
+   <a href="https://github.com/Jahongirhacking">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px" />
+   </a>
+   <a href="https://www.instagram.com/jahongir_khayitov/">
+      <img src="https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-png-full-colour-glyph.png" width="30px" />
+   </a>
+   <a href="mailto:Jahongirhacking@gmail.com">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" width="30px" />
    </a>
 </div>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/640px-Telegram_logo.svg.png"/>
+👨🏻‍💻 I am a Frontend Developer from Uzbekistan. Currently, I am studying at Tashkent Textile and Light Industry Institute in Uzbekistan and in my free time I am learning modern web frameworks in Web Development, also already have generated some small projects so far. My previous IT university courses helped me learn basic concepts of Software Design Patterns, Data Structures and Algorithms especially Graph Theory. Everyday I practice my skills using my favourite programming languages JavaScript and C++ on Leetcode platform. In my opinion, these concepts what I have learned will help you!
 
-2. Contact Info (add several ways to contact you)
-3. Summary (your goal, wishes, reveal what is important for you, what do you want and why.
-   Some kind of self-presentation. In case of lack of experience Junior Developer sells his/her potential, his/her passion and ability to learn fast. You shouldn't think that everybody is going to teach you when you come to the workplace . Rather being a Junior means always
-   learning new things from everywhere etc.).
-4. Skills (e.g. programming languages, frameworks, methodologies, version control, tools etc.)
-5. Code examples (LATEST)
-6. Experience (for a Junior Dev it means all kinds of experience: coding tests, projects from courses,
-   freelance projects - wherever they had the opportunity to demonstrate skills they have.
-   Also it would be awesome if you add links to source code)
-7. Education (including courses, seminars, lectures, online learning)
-8. English (elaborate on what kind of practice you had, if any, how long it lasted and so on)
+🇬🇧 My English level is B2
+
+🎯 Press Spiderman image to get acquainted with my portfolio:
+
+<div style="margin: auto; width: fit-content">
+   <a href="https://jahongirhacking.netlify.app/">
+      <img style="border-radius: 15px" src="https://www.icegif.com/wp-content/uploads/icegif-145.gif" width="300px" />
+   </a>
+</div>

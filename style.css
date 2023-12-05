@@ -72,6 +72,11 @@ body #root {
   position: relative;
   z-index: 1;
 }
+@media screen and (max-width: 400px) {
+  body #root {
+    gap: 45px;
+  }
+}
 body #root .nav {
   font-weight: 600;
   display: flex;
@@ -358,6 +363,7 @@ body #root .about .about__title {
 @media screen and (max-width: 500px) {
   body #root .about .about__title {
     font-size: 16pt;
+    text-align: center;
   }
 }
 body #root .about .about__image-container {
@@ -365,10 +371,20 @@ body #root .about .about__image-container {
   align-items: center;
   gap: 25px;
 }
+@media screen and (max-width: 500px) {
+  body #root .about .about__image-container {
+    flex-direction: column;
+  }
+}
 body #root .about .about__image-container .grid-container {
   display: grid;
   grid-template-rows: auto;
   gap: 25px;
+}
+@media screen and (max-width: 500px) {
+  body #root .about .about__image-container .grid-container .extra-img {
+    display: none;
+  }
 }
 body #root .about .about__image-container .grid-container .image-box {
   border-radius: 20px;
@@ -389,11 +405,27 @@ body #root .app {
   gap: 10px;
   margin-top: 35px;
 }
+@media screen and (max-width: 930px) {
+  body #root .app {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body #root .app {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 body #root .app .image-box {
   order: 2;
 }
 body #root .app .image-box img {
   width: 100%;
+}
+@media screen and (max-width: 800px) {
+  body #root .app .image-box img {
+    width: 85%;
+  }
 }
 body #root .app .app__content {
   order: 1;
@@ -402,16 +434,46 @@ body #root .app .app__content {
   flex-direction: column;
   gap: 45px;
 }
+@media screen and (max-width: 300px) {
+  body #root .app .app__content {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 930px) {
+  body #root .app .app__content {
+    max-width: 400px;
+  }
+}
 body #root .app .app__content .app__title {
   font-size: 40pt;
 }
+@media screen and (max-width: 930px) {
+  body #root .app .app__content .app__title {
+    font-size: 30pt;
+  }
+}
+@media screen and (max-width: 300px) {
+  body #root .app .app__content .app__title {
+    font-size: 25pt;
+  }
+}
 body #root .app .app__content .app__info {
   font-size: 11pt;
+}
+@media screen and (max-width: 300px) {
+  body #root .app .app__content .app__info {
+    font-size: 10pt;
+  }
 }
 body #root .app .app__content .app__links {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media screen and (max-width: 400px) {
+  body #root .app .app__content .app__links {
+    flex-direction: column;
+  }
 }
 body #root .app .app__content .app__links a {
   display: flex;
@@ -422,6 +484,11 @@ body #root .app .app__content .app__links a {
   border-radius: 100px;
   transition: 0.6s ease;
 }
+@media screen and (max-width: 450px) {
+  body #root .app .app__content .app__links a {
+    font-size: 10pt;
+  }
+}
 body #root .app .app__content .app__links a:hover {
   background-color: var(--primary-color);
   color: var(--label-color);
@@ -429,13 +496,34 @@ body #root .app .app__content .app__links a:hover {
 body #root .app .app__content .app__links a i.fa-brands {
   font-size: 30px;
 }
-body #root .app .app__content .app__links a p {
+@media screen and (max-width: 450px) {
+  body #root .app .app__content .app__links a i.fa-brands {
+    font-size: 20px;
+  }
+}
+body #root .app .app__content .app__links a .link-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body #root .app .app__content .app__links a .link-content p {
   font-size: 9pt;
 }
-body #root .app .app__content .app__links a h3 {
+@media screen and (max-width: 450px) {
+  body #root .app .app__content .app__links a .link-content p {
+    font-size: 7pt;
+  }
+}
+body #root .app .app__content .app__links a .link-content h3 {
+  text-align: left;
   font-size: 11pt;
   font-weight: 600;
   margin-top: 3px;
+}
+@media screen and (max-width: 450px) {
+  body #root .app .app__content .app__links a .link-content h3 {
+    font-size: 9pt;
+  }
 }
 body #root .footer {
   background-color: var(--primary-color);
@@ -460,6 +548,7 @@ body #root .footer {
 @media screen and (max-width: 770px) {
   body #root .footer {
     flex-direction: column;
+    text-align: center;
   }
 }
 @media screen and (max-width: 505px) {
@@ -487,9 +576,24 @@ body #root .footer .motto h1 {
     font-size: 22pt;
   }
 }
+@media screen and (max-width: 770px) {
+  body #root .footer .motto h1 {
+    font-size: 30pt;
+  }
+}
+@media screen and (max-width: 400px) {
+  body #root .footer .motto h1 {
+    font-size: 25pt;
+  }
+}
 body #root .footer .motto .social-network__links > ul {
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 770px) {
+  body #root .footer .motto .social-network__links > ul {
+    justify-content: center;
+  }
 }
 body #root .footer .motto .social-network__links > ul a {
   display: flex;

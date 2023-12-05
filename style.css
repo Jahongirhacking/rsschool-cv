@@ -256,9 +256,12 @@ body #root .favorite-coffee .favorite__slider-container {
 }
 body #root .favorite-coffee .favorite__slider-container .favorite__slider {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
   max-width: 430px;
   scroll-snap-type: x mandatory;
+}
+body #root .favorite-coffee .favorite__slider-container .favorite__slider::-webkit-scrollbar {
+  display: none;
 }
 @media screen and (max-width: 340px) {
   body #root .favorite-coffee .favorite__slider-container .favorite__slider {
@@ -271,6 +274,7 @@ body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide
   flex-direction: column;
   align-items: center;
   row-gap: 20px;
+  scroll-snap-align: center;
 }
 body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .image-container img {
   width: 100%;

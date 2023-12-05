@@ -15,7 +15,6 @@ const currentSlideChanged = (slideNumber) => {
   if (slideNumber < 1) slideNumber = 1;
   else if (slideNumber > n) slideNumber = n;
 
-  console.log(slideNumber);
   location.hash = `slide-${slideNumber}`;
 
   document

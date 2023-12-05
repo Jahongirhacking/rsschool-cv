@@ -1,4 +1,173 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+.nav {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .nav__logo {
+  width: 100px;
+}
+.nav .nav__logo img {
+  width: 100%;
+  transition: filter 0.4s ease;
+}
+.nav .nav__logo img:hover {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.425));
+}
+.nav .nav__panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 68vw;
+}
+.nav .nav__panel a {
+  position: relative;
+}
+.nav .nav__panel a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  margin: -5px 0;
+  background-color: var(--primary-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.6s ease-in-out 0s;
+}
+.nav .nav__panel a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+.nav .nav__panel .nav__links {
+  display: flex;
+  gap: 20px;
+}
+.nav i.fa-bars {
+  font-size: 22pt;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  border-radius: 40px;
+  color: var(--label-color);
+  margin-top: 45px;
+  padding: 90px;
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+@media screen and (max-width: 925px) {
+  .footer {
+    gap: 80px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .footer {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 505px) {
+  .footer {
+    padding: 40px 10px;
+  }
+}
+.footer .motto {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.footer .motto h1 {
+  color: var(--label-color);
+  font-size: 40pt;
+  font-weight: 600;
+}
+@media screen and (max-width: 1100px) {
+  .footer .motto h1 {
+    font-size: 25pt;
+  }
+}
+@media screen and (max-width: 925px) {
+  .footer .motto h1 {
+    font-size: 22pt;
+  }
+}
+@media screen and (max-width: 770px) {
+  .footer .motto h1 {
+    font-size: 30pt;
+  }
+}
+@media screen and (max-width: 400px) {
+  .footer .motto h1 {
+    font-size: 25pt;
+  }
+}
+.footer .motto .social-network__links > ul {
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 770px) {
+  .footer .motto .social-network__links > ul {
+    justify-content: center;
+  }
+}
+.footer .motto .social-network__links > ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--label-color);
+  color: var(--label-color);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+@media screen and (max-width: 925px) {
+  .footer .motto .social-network__links > ul a {
+    width: 40px;
+    height: 40px;
+  }
+}
+.footer .motto .social-network__links > ul a:hover {
+  background-color: var(--label-color);
+  color: var(--primary-color);
+}
+.footer .motto .social-network__links > ul a i.fa-brands {
+  font-size: 28px;
+}
+@media screen and (max-width: 925px) {
+  .footer .motto .social-network__links > ul a i.fa-brands {
+    font-size: 20px;
+  }
+}
+.footer .contact-us {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.footer .contact-us h2 {
+  font-size: 16pt;
+}
+.footer .contact-us .contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (max-width: 925px) {
+  .footer .contact-us .contact-list {
+    font-size: 11pt;
+  }
+}
+
 :root {
   --primary-color: #403f3d;
   --secondary-color: #e1d4c9;
@@ -65,7 +234,8 @@ body {
     padding: 10px 10px 30px;
   }
 }
-body #root {
+
+#root {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -73,60 +243,11 @@ body #root {
   z-index: 1;
 }
 @media screen and (max-width: 400px) {
-  body #root {
+  #root {
     gap: 45px;
   }
 }
-body #root .nav {
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body #root .nav .nav__logo {
-  width: 100px;
-}
-body #root .nav .nav__logo img {
-  width: 100%;
-  transition: filter 0.4s ease;
-}
-body #root .nav .nav__logo img:hover {
-  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.425));
-}
-body #root .nav .nav__panel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 68vw;
-}
-body #root .nav .nav__panel a {
-  position: relative;
-}
-body #root .nav .nav__panel a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  margin: -5px 0;
-  background-color: var(--primary-color);
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.6s ease-in-out 0s;
-}
-body #root .nav .nav__panel a:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-body #root .nav .nav__panel .nav__links {
-  display: flex;
-  gap: 20px;
-}
-body #root .nav i.fa-bars {
-  font-size: 22pt;
-  cursor: pointer;
-}
-body #root .hero {
+#root .hero {
   background: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.384)), url("./assets/hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -136,53 +257,53 @@ body #root .hero {
   padding: 90px;
 }
 @media screen and (max-width: 590px) {
-  body #root .hero {
+  #root .hero {
     padding: 30px;
   }
 }
-body #root .hero .hero__content {
+#root .hero .hero__content {
   max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 35px;
 }
 @media screen and (max-width: 590px) {
-  body #root .hero .hero__content {
+  #root .hero .hero__content {
     gap: 25px;
   }
 }
-body #root .hero .hero__content .hero__title {
+#root .hero .hero__content .hero__title {
   font-size: 48pt;
   line-height: 68px;
 }
 @media screen and (max-width: 715px) {
-  body #root .hero .hero__content .hero__title {
+  #root .hero .hero__content .hero__title {
     font-size: 35pt;
     line-height: 54px;
   }
 }
 @media screen and (max-width: 590px) {
-  body #root .hero .hero__content .hero__title {
+  #root .hero .hero__content .hero__title {
     font-size: 30pt;
     line-height: 45px;
   }
 }
 @media screen and (max-width: 400px) {
-  body #root .hero .hero__content .hero__title {
+  #root .hero .hero__content .hero__title {
     font-size: 23pt;
     line-height: 40px;
   }
 }
-body #root .hero .hero__content .hero__info {
+#root .hero .hero__content .hero__info {
   font-size: 11pt;
   line-height: 23px;
 }
 @media screen and (max-width: 715px) {
-  body #root .hero .hero__content .hero__info {
+  #root .hero .hero__content .hero__info {
     font-size: 10pt;
   }
 }
-body #root .hero .hero__content .hero__link-btn {
+#root .hero .hero__content .hero__link-btn {
   background-color: var(--label-color);
   border-radius: 30px;
   color: var(--primary-color);
@@ -192,36 +313,36 @@ body #root .hero .hero__content .hero__link-btn {
   font-weight: 600;
 }
 @media screen and (max-width: 715px) {
-  body #root .hero .hero__content .hero__link-btn {
+  #root .hero .hero__content .hero__link-btn {
     width: 120px;
     font-size: 11pt;
   }
 }
 @media screen and (max-width: 590px) {
-  body #root .hero .hero__content .hero__link-btn {
+  #root .hero .hero__content .hero__link-btn {
     width: 100px;
     font-size: 10pt;
     padding: 10px;
   }
 }
-body #root .hero .hero__content .hero__link-btn i.fa {
+#root .hero .hero__content .hero__link-btn i.fa {
   opacity: 0;
   transform: translateX(-6px);
   transition: transform 0.5s, opacity 0.5s, display 0.5s;
 }
-body #root .hero .hero__content .hero__link-btn span {
+#root .hero .hero__content .hero__link-btn span {
   display: inline-block;
   transform: translateX(11px);
   transition: transform 0.4s ease;
 }
-body #root .hero .hero__content .hero__link-btn:hover > i.fa {
+#root .hero .hero__content .hero__link-btn:hover > i.fa {
   opacity: 1;
   transform: translateX(0px);
 }
-body #root .hero .hero__content .hero__link-btn:hover > span {
+#root .hero .hero__content .hero__link-btn:hover > span {
   transform: translateX(0px);
 }
-body #root .favorite-coffee {
+#root .favorite-coffee {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,44 +352,44 @@ body #root .favorite-coffee {
   position: relative;
 }
 @media screen and (max-width: 400px) {
-  body #root .favorite-coffee {
+  #root .favorite-coffee {
     padding: 20px;
   }
 }
-body #root .favorite-coffee .favorite__title {
+#root .favorite-coffee .favorite__title {
   font-size: 40pt;
 }
 @media screen and (max-width: 540px) {
-  body #root .favorite-coffee .favorite__title {
+  #root .favorite-coffee .favorite__title {
     font-size: 22pt;
   }
 }
 @media screen and (max-width: 400px) {
-  body #root .favorite-coffee .favorite__title {
+  #root .favorite-coffee .favorite__title {
     font-size: 18pt;
   }
 }
-body #root .favorite-coffee .favorite__slider-container {
+#root .favorite-coffee .favorite__slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 20px;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider {
+#root .favorite-coffee .favorite__slider-container .favorite__slider {
   display: flex;
   overflow-x: auto;
   max-width: 430px;
   scroll-snap-type: x mandatory;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider::-webkit-scrollbar {
+#root .favorite-coffee .favorite__slider-container .favorite__slider::-webkit-scrollbar {
   display: none;
 }
 @media screen and (max-width: 340px) {
-  body #root .favorite-coffee .favorite__slider-container .favorite__slider {
+  #root .favorite-coffee .favorite__slider-container .favorite__slider {
     width: 100%;
   }
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide {
   flex: 1 0 100%;
   display: flex;
   flex-direction: column;
@@ -276,48 +397,48 @@ body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide
   row-gap: 20px;
   scroll-snap-align: center;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .image-container img {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .image-container img {
   width: 100%;
   transition: filter 0.4s ease;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .image-container img:hover {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .image-container img:hover {
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__name {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__name {
   font-size: 16pt;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__info {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__info {
   font-size: 11.5pt;
 }
 @media screen and (max-width: 350px) {
-  body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__info {
+  #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__info {
     font-size: 10pt;
   }
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__price {
+#root .favorite-coffee .favorite__slider-container .favorite__slider .slide .favorite__content .favorite__price {
   font-size: 16pt;
   font-weight: 800;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav {
+#root .favorite-coffee .favorite__slider-container .favorite__nav {
   display: flex;
   gap: 10px;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav a:not(.slide__btn) {
+#root .favorite-coffee .favorite__slider-container .favorite__nav a:not(.slide__btn) {
   height: 6px;
   width: 40px;
   background-color: #c1b6ad;
   border-radius: 100px;
   transition: background-color 0.6s ease-in;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav a:not(.slide__btn).active {
+#root .favorite-coffee .favorite__slider-container .favorite__nav a:not(.slide__btn).active {
   background-color: #665f55;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn {
+#root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn {
   width: 60px;
   height: 60px;
   display: flex;
@@ -331,78 +452,78 @@ body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__b
   transition: background-color 0.4s, color 0.4s ease;
 }
 @media screen and (max-width: 400px) {
-  body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn {
+  #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn {
     width: 40px;
     height: 40px;
   }
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn:hover {
+#root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn:hover {
   background-color: var(--primary-shadow);
   color: var(--label-color);
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn.left {
+#root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn.left {
   left: 0;
 }
-body #root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn.right {
+#root .favorite-coffee .favorite__slider-container .favorite__nav .slide__btn.right {
   right: 0;
 }
-body #root .about {
+#root .about {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
 }
-body #root .about .about__title {
+#root .about .about__title {
   font-size: 40pt;
 }
 @media screen and (max-width: 1100px) {
-  body #root .about .about__title {
+  #root .about .about__title {
     font-size: 25pt;
   }
 }
 @media screen and (max-width: 670px) {
-  body #root .about .about__title {
+  #root .about .about__title {
     font-size: 20pt;
   }
 }
 @media screen and (max-width: 500px) {
-  body #root .about .about__title {
+  #root .about .about__title {
     font-size: 16pt;
     text-align: center;
   }
 }
-body #root .about .about__image-container {
+#root .about .about__image-container {
   display: flex;
   align-items: center;
   gap: 25px;
 }
 @media screen and (max-width: 500px) {
-  body #root .about .about__image-container {
+  #root .about .about__image-container {
     flex-direction: column;
   }
 }
-body #root .about .about__image-container .grid-container {
+#root .about .about__image-container .grid-container {
   display: grid;
   grid-template-rows: auto;
   gap: 25px;
 }
 @media screen and (max-width: 500px) {
-  body #root .about .about__image-container .grid-container .extra-img {
+  #root .about .about__image-container .grid-container .extra-img {
     display: none;
   }
 }
-body #root .about .about__image-container .grid-container .image-box {
+#root .about .about__image-container .grid-container .image-box {
   border-radius: 20px;
   overflow: hidden;
 }
-body #root .about .about__image-container .grid-container .image-box img {
+#root .about .about__image-container .grid-container .image-box img {
   width: 100%;
   transform: scale(1.1);
   transition: transform 0.4s ease;
 }
-body #root .about .about__image-container .grid-container .image-box img:hover {
+#root .about .about__image-container .grid-container .image-box img:hover {
   transform: scale(1);
 }
-body #root .app {
+#root .app {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -410,28 +531,28 @@ body #root .app {
   margin-top: 35px;
 }
 @media screen and (max-width: 930px) {
-  body #root .app {
+  #root .app {
     gap: 40px;
   }
 }
 @media screen and (max-width: 800px) {
-  body #root .app {
+  #root .app {
     flex-direction: column;
     text-align: center;
   }
 }
-body #root .app .image-box {
+#root .app .image-box {
   order: 2;
 }
-body #root .app .image-box img {
+#root .app .image-box img {
   width: 100%;
 }
 @media screen and (max-width: 800px) {
-  body #root .app .image-box img {
+  #root .app .image-box img {
     width: 85%;
   }
 }
-body #root .app .app__content {
+#root .app .app__content {
   order: 1;
   max-width: 550px;
   display: flex;
@@ -439,47 +560,47 @@ body #root .app .app__content {
   gap: 45px;
 }
 @media screen and (max-width: 300px) {
-  body #root .app .app__content {
+  #root .app .app__content {
     gap: 30px;
   }
 }
 @media screen and (max-width: 930px) {
-  body #root .app .app__content {
+  #root .app .app__content {
     max-width: 400px;
   }
 }
-body #root .app .app__content .app__title {
+#root .app .app__content .app__title {
   font-size: 40pt;
 }
 @media screen and (max-width: 930px) {
-  body #root .app .app__content .app__title {
+  #root .app .app__content .app__title {
     font-size: 30pt;
   }
 }
 @media screen and (max-width: 300px) {
-  body #root .app .app__content .app__title {
+  #root .app .app__content .app__title {
     font-size: 25pt;
   }
 }
-body #root .app .app__content .app__info {
+#root .app .app__content .app__info {
   font-size: 11pt;
 }
 @media screen and (max-width: 300px) {
-  body #root .app .app__content .app__info {
+  #root .app .app__content .app__info {
     font-size: 10pt;
   }
 }
-body #root .app .app__content .app__links {
+#root .app .app__content .app__links {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 @media screen and (max-width: 400px) {
-  body #root .app .app__content .app__links {
+  #root .app .app__content .app__links {
     flex-direction: column;
   }
 }
-body #root .app .app__content .app__links a {
+#root .app .app__content .app__links a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -489,162 +610,44 @@ body #root .app .app__content .app__links a {
   transition: 0.6s ease;
 }
 @media screen and (max-width: 450px) {
-  body #root .app .app__content .app__links a {
+  #root .app .app__content .app__links a {
     font-size: 10pt;
   }
 }
-body #root .app .app__content .app__links a:hover {
+#root .app .app__content .app__links a:hover {
   background-color: var(--primary-color);
   color: var(--label-color);
 }
-body #root .app .app__content .app__links a i.fa-brands {
+#root .app .app__content .app__links a i.fa-brands {
   font-size: 30px;
 }
 @media screen and (max-width: 450px) {
-  body #root .app .app__content .app__links a i.fa-brands {
+  #root .app .app__content .app__links a i.fa-brands {
     font-size: 20px;
   }
 }
-body #root .app .app__content .app__links a .link-content {
+#root .app .app__content .app__links a .link-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-body #root .app .app__content .app__links a .link-content p {
+#root .app .app__content .app__links a .link-content p {
   font-size: 9pt;
 }
 @media screen and (max-width: 450px) {
-  body #root .app .app__content .app__links a .link-content p {
+  #root .app .app__content .app__links a .link-content p {
     font-size: 7pt;
   }
 }
-body #root .app .app__content .app__links a .link-content h3 {
+#root .app .app__content .app__links a .link-content h3 {
   text-align: left;
   font-size: 11pt;
   font-weight: 600;
   margin-top: 3px;
 }
 @media screen and (max-width: 450px) {
-  body #root .app .app__content .app__links a .link-content h3 {
+  #root .app .app__content .app__links a .link-content h3 {
     font-size: 9pt;
-  }
-}
-body #root .footer {
-  background-color: var(--primary-color);
-  border-radius: 40px;
-  color: var(--label-color);
-  margin-top: 45px;
-  padding: 90px;
-  display: flex;
-  align-items: center;
-  gap: 120px;
-}
-@media screen and (max-width: 925px) {
-  body #root .footer {
-    gap: 80px;
-  }
-}
-@media screen and (max-width: 810px) {
-  body #root .footer {
-    gap: 40px;
-  }
-}
-@media screen and (max-width: 770px) {
-  body #root .footer {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 505px) {
-  body #root .footer {
-    padding: 40px 10px;
-  }
-}
-body #root .footer .motto {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-body #root .footer .motto h1 {
-  color: var(--label-color);
-  font-size: 40pt;
-  font-weight: 600;
-}
-@media screen and (max-width: 1100px) {
-  body #root .footer .motto h1 {
-    font-size: 25pt;
-  }
-}
-@media screen and (max-width: 925px) {
-  body #root .footer .motto h1 {
-    font-size: 22pt;
-  }
-}
-@media screen and (max-width: 770px) {
-  body #root .footer .motto h1 {
-    font-size: 30pt;
-  }
-}
-@media screen and (max-width: 400px) {
-  body #root .footer .motto h1 {
-    font-size: 25pt;
-  }
-}
-body #root .footer .motto .social-network__links > ul {
-  display: flex;
-  gap: 10px;
-}
-@media screen and (max-width: 770px) {
-  body #root .footer .motto .social-network__links > ul {
-    justify-content: center;
-  }
-}
-body #root .footer .motto .social-network__links > ul a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid var(--label-color);
-  color: var(--label-color);
-  transition: background-color 0.6s ease, color 0.6s ease;
-}
-@media screen and (max-width: 925px) {
-  body #root .footer .motto .social-network__links > ul a {
-    width: 40px;
-    height: 40px;
-  }
-}
-body #root .footer .motto .social-network__links > ul a:hover {
-  background-color: var(--label-color);
-  color: var(--primary-color);
-}
-body #root .footer .motto .social-network__links > ul a i.fa-brands {
-  font-size: 28px;
-}
-@media screen and (max-width: 925px) {
-  body #root .footer .motto .social-network__links > ul a i.fa-brands {
-    font-size: 20px;
-  }
-}
-body #root .footer .contact-us {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
-body #root .footer .contact-us h2 {
-  font-size: 16pt;
-}
-body #root .footer .contact-us .contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-@media screen and (max-width: 925px) {
-  body #root .footer .contact-us .contact-list {
-    font-size: 11pt;
   }
 }
 

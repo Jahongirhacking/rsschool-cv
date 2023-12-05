@@ -129,7 +129,7 @@ const displayProducts = (type, target = coffeeBtn) => {
     image.setAttribute("src", prod.img);
     // Content
     const contentBox = document.createElement("div");
-    card.setAttribute("class", "card__content");
+    contentBox.setAttribute("class", "card__content");
     // Name
     const name = document.createElement("h2");
     name.textContent = `${prod.name}`;
@@ -139,13 +139,17 @@ const displayProducts = (type, target = coffeeBtn) => {
     // Cost
     const cost = document.createElement("b");
     cost.textContent = `${prod.cost}`;
+    // Body
+    const cardBody = document.createElement("div");
+    cardBody.setAttribute("class", "card__body");
     // Appending
     imageBox.appendChild(image);
     contentBox.appendChild(name);
     contentBox.appendChild(info);
-    contentBox.appendChild(cost);
+    cardBody.appendChild(contentBox);
+    cardBody.appendChild(cost);
     card.appendChild(imageBox);
-    card.appendChild(contentBox);
+    card.appendChild(cardBody);
     ProductsContainer.appendChild(card);
   });
 };
@@ -169,10 +173,12 @@ document.addEventListener("DOMContentLoaded", () =>
   displayProducts(localStorage.getItem("type") || "coffee")
 );
 
-coffeeBtn.addEventListener("click", (e) => displayProducts("coffee", e.target));
+coffeeBtn.addEventListener("click", (e) =>
+  displayProducts("coffee", coffeeBtn)
+);
 
-teaBtn.addEventListener("click", (e) => displayProducts("tea", e.target));
+teaBtn.addEventListener("click", (e) => displayProducts("tea", teaBtn));
 
-dessertBtn.addEventListener("click", (e) =>
-  displayProducts("dessert", e.target)
+dessertBtn.addEventListener("click", () =>
+  displayProducts("dessert", dessertBtn)
 );

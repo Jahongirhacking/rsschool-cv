@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 68vw;
+  width: calc(225px + 50%);
 }
 .nav .nav__panel a {
   position: relative;
@@ -42,7 +42,7 @@
 }
 .nav .nav__panel .nav__links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 .nav i.fa-bars {
   font-size: 22pt;

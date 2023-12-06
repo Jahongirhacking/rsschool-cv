@@ -293,12 +293,13 @@ body #root {
   font-weight: 600;
   background-color: transparent;
   cursor: pointer;
+  transition: background 0.5s, color 0.5s ease;
 }
-.main .main__tabs .tab-item.active {
+.main .main__tabs .tab-item.active, .main .main__tabs .tab-item:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
-.main .main__tabs .tab-item.active span {
+.main .main__tabs .tab-item.active span, .main .main__tabs .tab-item:hover span {
   background-color: var(--secondary-color);
 }
 .main .main__tabs .tab-item span {

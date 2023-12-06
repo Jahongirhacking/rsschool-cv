@@ -328,6 +328,7 @@ body #root {
   border: 1px solid #c1b6ad;
   border-radius: 40px;
   text-align: left;
+  background-color: var(--label-color);
 }
 @media screen and (max-width: 650px) {
   .main .products .product-card {

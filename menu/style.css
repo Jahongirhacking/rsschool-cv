@@ -268,9 +268,23 @@ body #root {
   max-height: 90dvh;
   overflow-y: auto;
 }
+@media screen and (max-width: 610px) {
+  .overlay .modal {
+    flex-direction: column;
+    text-align: center;
+    width: 85%;
+    row-gap: 10px;
+  }
+}
 .overlay .modal .modal__img-box .modal__img {
   width: 200px;
   border-radius: 30px;
+}
+@media screen and (max-width: 610px) {
+  .overlay .modal .modal__img-box .modal__img {
+    width: 90%;
+    max-width: 250px;
+  }
 }
 .overlay .modal .modal__content {
   display: flex;
@@ -279,6 +293,11 @@ body #root {
 }
 .overlay .modal .modal__content p {
   margin-bottom: 5px;
+}
+@media screen and (max-width: 610px) {
+  .overlay .modal .modal__content p {
+    font-size: 12pt;
+  }
 }
 .overlay .modal .modal__content .modal__choices {
   display: flex;
@@ -294,6 +313,11 @@ body #root {
   gap: 15px;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+@media screen and (max-width: 610px) {
+  .overlay .modal .modal__content .modal__choices .btn-group {
+    justify-content: center;
+  }
 }
 .overlay .modal .modal__content .modal__choices .btn-group .btn-item {
   display: flex;

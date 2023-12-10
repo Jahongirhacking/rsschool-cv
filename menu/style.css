@@ -238,12 +238,121 @@ body #root {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  position: relative;
 }
 @media screen and (max-width: 400px) {
   body #root {
     gap: 45px;
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay .modal {
+  width: 700px;
+  background-color: var(--secondary-color);
+  display: flex;
+  padding: 18px;
+  column-gap: 15px;
+  border-radius: 30px;
+  max-height: 90dvh;
+  overflow-y: auto;
+}
+.overlay .modal .modal__img-box .modal__img {
+  width: 200px;
+  border-radius: 30px;
+}
+.overlay .modal .modal__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.overlay .modal .modal__content p {
+  margin-bottom: 5px;
+}
+.overlay .modal .modal__content .modal__choices {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+.overlay .modal .modal__content .modal__choices h3 {
+  font-size: 11pt;
+  font-weight: 400;
+}
+.overlay .modal .modal__content .modal__choices .btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.overlay .modal .modal__content .modal__choices .btn-group .btn-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 20px 5px 6px;
+  border: 1px solid #c1b6ad;
+  border-radius: 200px;
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background 0.5s, color 0.5s ease;
+}
+.overlay .modal .modal__content .modal__choices .btn-group .btn-item.active, .overlay .modal .modal__content .modal__choices .btn-group .btn-item:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.overlay .modal .modal__content .modal__choices .btn-group .btn-item.active span, .overlay .modal .modal__content .modal__choices .btn-group .btn-item:hover span {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+.overlay .modal .modal__content .modal__choices .btn-group .btn-item span {
+  width: 30px;
+  height: 30px;
+  font-size: 11pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #c1b6ad;
+}
+.overlay .modal .modal__content .modal__cost-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17pt;
+}
+.overlay .modal .modal__content .modal__warning {
+  display: flex;
+  column-gap: 5px;
+}
+.overlay .modal .modal__content .modal__warning i {
+  font-size: 11pt;
+}
+.overlay .modal .modal__content .modal__warning p {
+  font-size: 9pt;
+}
+.overlay .modal .modal__content .modal__close-btn {
+  border-radius: 100px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+.overlay .modal .modal__content .modal__close-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .main {
@@ -329,6 +438,7 @@ body #root {
   border-radius: 40px;
   text-align: left;
   background-color: var(--label-color);
+  cursor: pointer;
 }
 @media screen and (max-width: 650px) {
   .main .products .product-card {

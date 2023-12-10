@@ -266,7 +266,7 @@ body #root {
 }
 
 .hero {
-  background: url("./assets/hero.jpg");
+  background: url("./assets/hero.jpg"), black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

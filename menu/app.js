@@ -3,6 +3,14 @@ const ProductsContainer = document.getElementById("products");
 const coffeeBtn = document.getElementById("coffee-btn");
 const teaBtn = document.getElementById("tea-btn");
 const dessertBtn = document.getElementById("dessert-btn");
+const modalOverlay = document.querySelector(".overlay");
+const modalImg = document.getElementById("modal__img");
+const modalName = document.getElementById("modal__name");
+const modalInfo = document.getElementById("modal__info");
+const modalSizes = document.getElementById("modal__sizes");
+const modalAdditives = document.getElementById("modal__additives");
+const modalCost = document.getElementById("modal__cost");
+const navPanel = document.querySelector(".nav__panel");
 
 const menu = {
   coffee: [
@@ -109,6 +117,74 @@ const menu = {
   ],
 };
 
+const openModal = () => {
+  modalOverlay.classList.remove("hidden");
+};
+
+const closeModal = () => {
+  modalOverlay.classList.add("hidden");
+};
+
+const handleSize = (target, cost) => {
+  Array.from(modalSizes.children).forEach((btn, index) => {
+    if (btn !== target) btn.classList.remove("active");
+    else {
+      btn.classList.add("active");
+      modalCost.textContent = `$${(
+        (1 + index * 0.5) *
+        parseFloat(cost.slice(1))
+      ).toFixed(2)}`;
+    }
+  });
+};
+
+const handleAdditive = (target) => {
+  target.classList.toggle("active");
+};
+
+const handleClick = (imgSrc, name, info, cost, type) => {
+  // Size and additives
+  const obj = {
+    sizes: [
+      ["S", "200 ml"],
+      ["M", "300 ml"],
+      ["L", "400ml"],
+    ],
+    additives: ["Sugar", "Cinnamon", "Syrup"],
+  };
+  if (type === "tea") obj.additives[1] = "Lemon";
+  else if (type === "dessert") {
+    obj.sizes = [
+      ["S", "50 g"],
+      ["M", "100 g"],
+      ["L", "200 g"],
+    ];
+    obj.additives = ["Berries", "Nuts", "Jam"];
+  }
+  // Inject info
+  modalImg.setAttribute("src", imgSrc);
+  modalName.textContent = name;
+  modalInfo.textContent = info;
+  modalCost.textContent = cost;
+  modalSizes.innerHTML = "";
+  obj.sizes.map((size, index) => {
+    const button = document.createElement("button");
+    button.setAttribute("class", `btn-item ${index === 0 ? "active" : ""}`);
+    button.innerHTML = `<span>${size[0]}</span> ${size[1]}`;
+    button.addEventListener("click", () => handleSize(button, cost));
+    modalSizes.appendChild(button);
+  });
+  modalAdditives.innerHTML = "";
+  obj.additives.map((additive, index) => {
+    const button = document.createElement("button");
+    button.setAttribute("class", "btn-item");
+    button.innerHTML = `<span>${index + 1}</span> ${additive}`;
+    button.addEventListener("click", () => handleAdditive(button));
+    modalAdditives.appendChild(button);
+  });
+  openModal();
+};
+
 const displayProducts = (type, target = coffeeBtn) => {
   // Active
   [coffeeBtn, teaBtn, dessertBtn].forEach((btn) => {
@@ -150,6 +226,9 @@ const displayProducts = (type, target = coffeeBtn) => {
     cardBody.appendChild(cost);
     card.appendChild(imageBox);
     card.appendChild(cardBody);
+    card.addEventListener("click", () =>
+      handleClick(prod.img, prod.name, prod.info, prod.cost, type)
+    );
     ProductsContainer.appendChild(card);
   });
 };
@@ -162,6 +241,12 @@ const handleResize = () => {
     document.querySelector(".nav__panel").classList.remove("hidden");
     document.querySelector(".nav > i.fa-bars").classList.add("hidden");
   }
+};
+
+const handleNavPanel = () => {
+  navPanel.classList.toggle("active");
+  navPanel.classList.toggle("hidden");
+  document.querySelector(".nav > i.fa-bars").classList.toggle("hidden");
 };
 
 window.addEventListener("resize", handleResize);
@@ -182,3 +267,25 @@ teaBtn.addEventListener("click", (e) => displayProducts("tea", teaBtn));
 dessertBtn.addEventListener("click", () =>
   displayProducts("dessert", dessertBtn)
 );
+
+modalOverlay.querySelector(".modal").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+modalOverlay.addEventListener("click", () => {
+  closeModal();
+});
+
+modalOverlay
+  .querySelector("#modal__close-btn")
+  .addEventListener("click", closeModal);
+
+document
+  .querySelector(".nav > i.fa-bars")
+  .addEventListener("click", handleNavPanel);
+
+navPanel.addEventListener("click", () => {
+  if (navPanel.classList.contains("active")) {
+    handleNavPanel();
+  }
+});

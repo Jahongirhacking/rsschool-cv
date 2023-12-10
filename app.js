@@ -8,6 +8,7 @@ const slider = document.getElementById("slider");
 const slidePortals = document.querySelectorAll(
   ".favorite__nav > .slide__portal"
 );
+const navPanel = document.querySelector(".nav__panel");
 
 const currentSlideChanged = (slideNumber) => {
   // Number of slides
@@ -52,6 +53,12 @@ const handleResize = () => {
   }
 };
 
+const handleNavPanel = () => {
+  navPanel.classList.toggle("active");
+  navPanel.classList.toggle("hidden");
+  document.querySelector(".nav > i.fa-bars").classList.toggle("hidden");
+};
+
 slidePortals.forEach((a, index) => {
   a.setAttribute("data-id", index + 1);
   a.addEventListener("click", () =>
@@ -70,4 +77,14 @@ rightBtn.addEventListener("click", () => {
 window.addEventListener("resize", handleResize);
 document.addEventListener("DOMContentLoaded", () => {
   handleResize();
+});
+
+document
+  .querySelector(".nav > i.fa-bars")
+  .addEventListener("click", handleNavPanel);
+
+navPanel.addEventListener("click", () => {
+  if (navPanel.classList.contains("active")) {
+    handleNavPanel();
+  }
 });

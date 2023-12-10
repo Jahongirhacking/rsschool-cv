@@ -16,6 +16,62 @@
   </head>
   <body>
     <div id="root">
+      <div class="overlay hidden">
+      	<div class="modal">
+      	  <div class="modal__img-box">
+      	    <img id="modal__img" class="modal__img" src="../assets/coffee/coffee-1.jpg" alt="modal image">
+      	  </div>
+      	  <article class="modal__content">
+      	    <h2 id="modal__name" class="modal__name">Irish Coffee</h2>
+      	    <p id="modal__info" class="modal__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At dolorem porro quae!</p>
+      	    <div class="modal__choices">
+      	      <h3>Size</h3>
+      	      <div id="modal__sizes" class="modal__sizes btn-group">
+                <button class="btn-item">
+                  <span>S</span>
+                  200 ml
+                </button>
+                <button class="btn-item">
+                  <span>M</span>
+                  300 ml
+                </button>
+                <button class="btn-item">
+                  <span>L</span>
+                  400 ml
+                </button>
+              </div>
+      	    </div>
+      	    <div class="modal__choices">
+      	      <h3>Additives</h3>
+      	      <div id="modal__additives" class="modal__additives btn-group">
+                <button class="btn-item">
+                  <span>1</span>
+                  Sugar
+                </button>
+                <button class="btn-item">
+                  <span>2</span>
+                  Cinnamon
+                </button>
+                <button class="btn-item">
+                  <span>3</span>
+                  Syrup
+                </button>
+              </div>
+      	    </div>
+      	    
+      	    <b class="modal__cost-container">
+      	    	<span>Total:</span>
+      	    	<span id="modal__cost" class="modal__cost">$7.00</span>
+      	    </b>
+      	    <hr>
+      	    <div class="modal__warning">
+      	        <i class="fa-solid fa-circle-info"></i>
+      	    	<p>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+      	    </div>
+      	    <button id="modal__close-btn" class="modal__close-btn">Close</button>
+      	  </article>
+      	</div>
+      </div>
       <nav class="nav">
         <div class="nav__logo">
           <img src="../assets/logo.png" alt="logo image" >
@@ -101,3 +157,5 @@
     <script src="./app.js"></script>
   </body>
 </html>
+
+

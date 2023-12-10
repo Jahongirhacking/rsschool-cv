@@ -2,6 +2,156 @@
 @import "../styles/footer.scss";
 @import "../styles/global.scss";
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    width: 700px;
+    background-color: var(--secondary-color);
+    display: flex;
+    padding: 18px;
+    column-gap: 15px;
+    border-radius: 30px;
+    max-height: 90dvh;
+    overflow-y: auto;
+
+    @media screen and (max-width: 610px) {
+      flex-direction: column;
+      text-align: center;
+      width: 85%;
+      row-gap: 10px;
+    }
+
+    .modal__img-box {
+      .modal__img {
+        width: 200px;
+        border-radius: 30px;
+
+        @media screen and (max-width: 610px) {
+          width: 90%;
+          max-width: 250px;
+        }
+      }
+    }
+
+    .modal__content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+
+      p {
+        margin-bottom: 5px;
+
+        @media screen and (max-width: 610px) {
+          font-size: 12pt;
+        }
+      }
+
+      .modal__choices {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+
+        h3 {
+          font-size: 11pt;
+          font-weight: 400;
+        }
+        .btn-group {
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          @media screen and (max-width: 610px) {
+            justify-content: center;
+          }
+
+          .btn-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 20px 5px 6px;
+            border: 1px solid #c1b6ad;
+            border-radius: 200px;
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background 0.5s, color 0.5s ease;
+
+            &.active,
+            &:hover {
+              background-color: var(--primary-color);
+              color: var(--secondary-color);
+
+              span {
+                color: var(--primary-color);
+                background-color: var(--secondary-color);
+              }
+            }
+
+            span {
+              width: 30px;
+              height: 30px;
+              font-size: 11pt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              background-color: #c1b6ad;
+            }
+          }
+        }
+      }
+      .modal__cost-container {
+        display: flex;
+        justify-content: space-between;
+        font-size: 17pt;
+      }
+
+      .modal__warning {
+        display: flex;
+        column-gap: 5px;
+        i {
+          font-size: 11pt;
+        }
+
+        p {
+          font-size: 9pt;
+          @media screen and (max-width: 610px) {
+            font-size: 8pt;
+          }
+        }
+      }
+
+      .modal__close-btn {
+        border-radius: 100px;
+        border: 1px solid var(--primary-color);
+        background-color: transparent;
+        padding: 10px 0;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease;
+
+        &:hover {
+          background-color: var(--primary-color);
+          color: var(--secondary-color);
+        }
+      }
+    }
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -89,6 +239,7 @@
       border-radius: 40px;
       text-align: left;
       background-color: var(--label-color);
+      cursor: pointer;
 
       @media screen and (max-width: 650px) {
         width: 220px;

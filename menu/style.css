@@ -365,6 +365,11 @@ body #root {
 .overlay .modal .modal__content .modal__warning p {
   font-size: 9pt;
 }
+@media screen and (max-width: 610px) {
+  .overlay .modal .modal__content .modal__warning p {
+    font-size: 8pt;
+  }
+}
 .overlay .modal .modal__content .modal__close-btn {
   border-radius: 100px;
   border: 1px solid var(--primary-color);

@@ -10,6 +10,7 @@ const modalInfo = document.getElementById("modal__info");
 const modalSizes = document.getElementById("modal__sizes");
 const modalAdditives = document.getElementById("modal__additives");
 const modalCost = document.getElementById("modal__cost");
+const navPanel = document.querySelector(".nav__panel");
 
 const menu = {
   coffee: [
@@ -242,6 +243,12 @@ const handleResize = () => {
   }
 };
 
+const handleNavPanel = () => {
+  navPanel.classList.toggle("active");
+  navPanel.classList.toggle("hidden");
+  document.querySelector(".nav > i.fa-bars").classList.toggle("hidden");
+};
+
 window.addEventListener("resize", handleResize);
 document.addEventListener("DOMContentLoaded", () => {
   handleResize();
@@ -272,3 +279,13 @@ modalOverlay.addEventListener("click", () => {
 modalOverlay
   .querySelector("#modal__close-btn")
   .addEventListener("click", closeModal);
+
+document
+  .querySelector(".nav > i.fa-bars")
+  .addEventListener("click", handleNavPanel);
+
+navPanel.addEventListener("click", () => {
+  if (navPanel.classList.contains("active")) {
+    handleNavPanel();
+  }
+});

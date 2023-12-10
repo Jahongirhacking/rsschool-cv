@@ -21,6 +21,26 @@
   justify-content: space-between;
   width: calc(225px + 50%);
 }
+.nav .nav__panel.active {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 2;
+  background-color: rgba(225, 212, 201, 0.862745098);
+  backdrop-filter: blur(3px);
+}
+.nav .nav__panel.active .nav__links {
+  flex-direction: column;
+  text-align: center;
+}
 .nav .nav__panel a {
   position: relative;
 }

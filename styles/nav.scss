@@ -23,6 +23,28 @@
     justify-content: space-between;
     width: calc(225px + 50%);
 
+    &.active {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      z-index: 2;
+      background-color: #e1d4c9dc;
+      backdrop-filter: blur(3px);
+
+      .nav__links {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
     a {
       position: relative;
       &:before {

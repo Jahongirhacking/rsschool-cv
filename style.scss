@@ -3,6 +3,7 @@
 @import "./styles/global.scss";
 
 .hero {
+  position: relative;
   background: url("./assets/hero.jpg"), black;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,16 +11,30 @@
   border-radius: 38px;
   color: var(--label-color);
   padding: 90px;
+  overflow: hidden;
 
   @media screen and (max-width: 590px) {
     padding: 30px;
   }
 
+  video {
+    filter: brightness(0.5);
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
   .hero__content {
+    position: relative;
     max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 35px;
+    z-index: 1;
 
     @media screen and (max-width: 590px) {
       gap: 25px;
@@ -55,13 +70,17 @@
     }
 
     .hero__link-btn {
+      align-items: center;
       background-color: var(--label-color);
       border-radius: 30px;
       color: var(--primary-color);
-      width: 180px;
-      text-align: center;
-      padding: 20px;
+      column-gap: 5px;
+      display: flex;
       font-weight: 600;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      width: 180px;
 
       @media screen and (max-width: 715px) {
         width: 120px;
@@ -74,19 +93,19 @@
         padding: 10px;
       }
 
-      i.fa {
+      .fa-coffee {
         opacity: 0;
         transform: translateX(-6px);
         transition: transform 0.5s, opacity 0.5s, display 0.5s;
+        width: 25px;
       }
 
       span {
-        display: inline-block;
         transform: translateX(11px);
         transition: transform 0.4s ease;
       }
 
-      &:hover > i.fa {
+      &:hover > .fa-coffee {
         opacity: 1;
         transform: translateX(0px);
       }

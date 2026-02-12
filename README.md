@@ -1,2 +1,1 @@
-# rsschool-cv
-RS-School CV
+https://jahongirhacking.github.io/rsschool-cv/
